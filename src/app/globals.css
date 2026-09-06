@@ -1,0 +1,31 @@
+@import "@fontsource-variable/archivo";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    @apply bg-paper text-ink font-sans;
+  }
+  /* Body copy sits under 75 characters per line for comfortable reading. */
+  .prose-measure {
+    max-width: 64ch;
+  }
+  :focus-visible {
+    outline: 2px solid #1f4034;
+    outline-offset: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
